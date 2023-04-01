@@ -1,5 +1,3 @@
- using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 abstract public class Resources : MonoBehaviour
@@ -12,31 +10,22 @@ abstract public class Resources : MonoBehaviour
     public int quantity;
 
 
-    public Resources _Resources;
-
     void Start()
     {
-        _Resources = this.gameObject.GetComponent<Resources>();
-
+        
     }
-    public void TakeDamage(GameObject Character, float damage)
+    protected void Spawn()
+    {
+        
+    }
+    public void TakeDamage(GameObject ore, float damage)
     {
 
         CurrentDurability -= damage;
         if (CurrentDurability <= 0)
         {
-            Destroy(Character);
+            Destroy(ore);
         }
     }
-
-
-        
-     
-    // Start is called before the first frame update
-  
-
-    // Update is called once per frame
-  
-    
 }
 
